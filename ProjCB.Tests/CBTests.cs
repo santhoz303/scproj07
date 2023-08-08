@@ -6,12 +6,21 @@ public class CBTests
     [Fact]
     public void TestMessageResponse()
     {
+        ChatBot CBObj = new ChatBot();
         //Arrange
-        string Message="";
+        //Act
+        string message = CBObj.Send("Hi");
+        //Assert
+        Assert.Equal("Hi How are you Akila",message);
+    }
+    [Fact]
+    public void TestMessageResponseisHowCanIHelp()
+    {
+        //Arrange
         ChatBot CBObj = new ChatBot();
         //Act
-        Message = CBObj.send("Hi");
+        string message = CBObj.Sendmsg("Help");
         //Assert
-        Assert.Equal("Hi How are you Akila",Message);
+        Assert.Equal("How Can I Help!",message);
     }
 }
